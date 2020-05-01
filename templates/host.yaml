@@ -1,0 +1,12 @@
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: {{ .Values.hostMetadataName }}
+spec:
+  hostname: {{ .Values.hostname }}
+  ambassadorId: {{ .Values.ambassadorIds }}
+  acmeProvider:
+    authority: none
+  requestPolicy:
+    insecure:
+      action: Route
